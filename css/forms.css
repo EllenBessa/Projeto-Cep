@@ -1,0 +1,8 @@
+.input-field input:focus + label{
+  color: rgb(0, 0, 0) !important;
+}
+
+.input-field input:focus{
+  border-bottom: 1px solid rgb(0, 0, 0) !important;
+  box-shadow: 0 0px 0 0 rgb(0, 0, 0) !important;
+}
