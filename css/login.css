@@ -1,45 +1,45 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-.center{
+.center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
-  padding: 25px;
+  background: #e9e9e9;
+  padding: 20px;
   border-radius: 25px;
   width: 25%;
 }
 
-@media(max-width: 1555px){
-  .center{
+@media (max-width: 1555px) {
+  .center {
     width: 40%;
   }
 }
 
-@media(max-width: 1175px){
-  .center{
+@media (max-width: 1175px) {
+  .center {
     width: 55%;
   }
 }
 
-@media(max-width: 850px){
-  .center{
+@media (max-width: 850px) {
+  .center {
     width: 65%;
   }
 }
 
-@media(max-width: 680px){
-  .center{
+@media (max-width: 680px) {
+  .center {
     width: 80%;
   }
 }
 
-@media(max-width: 500px){
-  .center{
+@media (max-width: 500px) {
+  .center {
     width: 95%;
   }
 }
