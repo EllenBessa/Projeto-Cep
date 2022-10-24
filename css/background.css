@@ -1,8 +1,8 @@
 /* Background */
 
 .area {
-  background: linear-gradient(129deg, #7e57c2, #4a148c);
-  background: -webkit-linear-gradient(to left, #7e57c2, #4a148c);
+  background: linear-gradient(129deg, #6309ff, #651fff);
+  background: -webkit-linear-gradient(to left, #9058f1, #651fff);
   width: 100%;
   height: 100%;
   position: absolute;

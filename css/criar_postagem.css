@@ -1,0 +1,20 @@
+.form {
+  margin-top: 8vh;
+}
+
+.preview {
+  margin-top: 8vh;
+}
+
+.conf {
+  height: 500px;
+}
+
+.textarea {
+  resize: none;
+}
+
+.user-img {
+  width: 350px;
+  height: 350px;
+}

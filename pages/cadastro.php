@@ -1,8 +1,14 @@
+<?php
+
+  session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-  <title> Connected Study - Cadastro </title>
+  <title> Connected Study | Cadastro </title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,37 +53,45 @@
 
           <h3>Cadastro</h3>
 
+          <?php 
+            if(isset($_SESSION["erro_cadastro"]) && $_SESSION["erro_cadastro"] == true ) {
+          ?>
+
+          <div class='mensagem-erro'>
+            <i class='material-icons'>error</i>
+            <p> <strong> Erro ao cadastrar: </strong> o nome de usuário ou e-mail já esta em uso </p>
+          </div>
+
+          <?php
+            }
+          ?>
+
           <form method="post" action="../services/cadastro.php">
 
             <div class="input-field col s12 offset-s0 m6">
               <i class="material-icons prefix">account_circle</i>
-              <input type="text" name="nome_usuario" maxlength="30" autocomplete="off" required>
-              <label for="icon_prefix">Nome de Usuário</label>
+              <input name="nome_usuario" maxlength="30" autocomplete="off" placeholder="Nome de Usuário" required>
             </div>
 
             <div class="input-field col s12 m6 offset-m0">
               <i class="material-icons prefix">phone</i>
-              <input type="text" name="telefone" maxlength="20" autocomplete="off">
-              <label for="icon_prefix">Telefone</label>
+              <input name="telefone" maxlength="20" autocomplete="off" placeholder="Telefone">
             </div>
 
 
             <div class="input-field col s12  offset-s0 m6">
               <i class="material-icons prefix">account_box</i>
-              <input type="text" name="nome" maxlength="100" autocomplete="off" required>
-              <label for="icon_prefix">Nome Completo</label>
+              <input name="nome" maxlength="100" autocomplete="off" placeholder="Nome Completo" required>
             </div>
 
             <div class="input-field col s12 m6 offset-m0">
               <i class="material-icons prefix">location_on</i>
-              <input type="text" name="cidade" maxlength="50" autocomplete="off">
-              <label for="icon_prefix">Cidade</label>
+              <input name="cidade" maxlength="50" autocomplete="off" placeholder="Cidade">
             </div>
 
             <div class="input-field col s12 offset-s0 m6">
-              <i class="material-icons prefix">mail</i>
-              <input type="email" name="email" maxlength="80" autocomplete="off" required>
-              <label for="icon_prefix">E-mail</label>
+              <i class="material-icons prefix black-text">mail</i>
+              <input type="email" name="email" maxlength="80" autocomplete="off" placeholder="E-mail" required>
             </div>
 
             <div class="input-field col s11 offset-s1 m6 offset-m0">
@@ -94,22 +108,21 @@
             </div>
 
             <div class="input-field col s12 offset-s0 m6">
-              <i class="material-icons prefix">https</i>
-              <input type="password" name="senha" maxlength="32" autocomplete="off" required>
-              <label for="icon_prefix">Senha</label>
+              <i class="material-icons prefix black-text">https</i>
+              <input type="password" name="senha" maxlength="32" autocomplete="off" placeholder="Senha" required>
             </div>
 
             <div class="input-field col s11 offset-s1 m6 offset-m0">
-              <select>
+              <select name="nivel_acesso">
                 <option value="Aluno" selected>Aluno</option>
                 <option value="Professor">Professor</option>
-                <option value="Administrados">Administrador</option>
+                <option value="Administrador">Administrador</option>
               </select>
-              <label>Nivel de Acesso </label>
+              <label>Nivel de Acesso</label>
             </div>
 
             <div class="input-field col s12 m12">
-              <button class="btn waves-effect waves-light right purple darken-3" type="submit">
+              <button class="btn waves-effect waves-light right deep-purple accent-3" type="submit">
                 Enviar
                 <i class="material-icons right">send</i>
               </button>

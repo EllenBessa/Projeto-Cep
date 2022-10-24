@@ -13,6 +13,16 @@
   border-radius: 25px;
   width: 45%;
 }
+
+.mensagem-erro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px;
+  color: red;
+}
+
 /* mobile */
 @media (max-width: 1340px) {
   .center {

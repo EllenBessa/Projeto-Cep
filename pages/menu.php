@@ -1,15 +1,26 @@
+<?php
+
+  include_once("../services/verifica_login.php");
+
+?>
+
 <nav>
-  <div class="nav-wrapper purple darken-3">
+  <div class="nav-wrapper deep-purple accent-3">
     <div class="container">
-      <a href="" class="brand-logo">Connected Study</a>
+      <a href="principal.php" class="brand-logo">Connected Study</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>
-          <a href="./perfil.php">
+          <a href="./perfil.php" style="height: 65px">
             <img src="https://www.w3schools.com/howto/img_avatar.png" alt="" class="circle avatar-menu" />
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="./meus_artigos.php">
+            Meus Artigos
+          </a>
+        </li>
+        <li>
+          <a href="./artigos.php">
             Artigos
           </a>
         </li>

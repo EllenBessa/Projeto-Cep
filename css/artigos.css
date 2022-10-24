@@ -1,0 +1,18 @@
+.altura {
+  height: 80px;
+}
+
+.formatacao {
+  line-height: 0%;
+  padding: 0;
+  font-size: 2.5rem;
+}
+
+.altura-card {
+  height: 245px;
+}
+
+.texto-card {
+  text-decoration: none;
+  color: #757575;
+}

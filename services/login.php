@@ -15,7 +15,8 @@
     $_SESSION["nome_usuario"] = $usuario["nome_usuario"];
     $_SESSION["id"] = $usuario["id"];
     $_SESSION["logado"] = TRUE;
-    return header("location: ../pages/principal.php");
+    $_SESSION["erro_cadastro"] = false;
+    return header("location: ../pages/artigos.php");
   }
 
   return header("location: ../pages/login.php");

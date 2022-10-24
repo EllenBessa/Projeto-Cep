@@ -8,7 +8,7 @@
 <html lang="pt-br">
 
 <head>
-  <title> Connected Study | Postagem </title>
+  <title> Connected Study | Editar Artigos </title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +27,7 @@
 
   <div class="container">
     <div class="row">
+
       <div class="col l6 m6 s12">
         <form class="form">
           <div class="col xl12 l12 m12 s12">
@@ -75,6 +76,11 @@
               </p>
             </div>
           </div>
+
+          <button class="btn waves-effect waves-light right" type="enviar" name="action">Editar
+            <i class="material-icons right">send</i>
+          </button>
+
         </form>
       </div>
 
@@ -96,7 +102,9 @@
           voluptatibus veniam maiores nihil distinctio excepturi facilis a, dolores repudiandae nemo magni? Deleniti
           dolorem atque nostrum? </p>
       </div>
+
     </div>
+
   </div>
 
 

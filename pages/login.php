@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <title> Connected Study - Login </title>
+  <title> Connected Study | Login </title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@
     <div class="row">
 
       <div class="col s4 offset-s4">
-        <h3>OI</h3>
+
         <div class="center z-depth-3">
 
           <div class="col s10 offset-s1">
@@ -49,15 +49,14 @@
           <form method="post" action="../services/login.php">
             <div class="input-field col s10 offset-s1">
               <i class="material-icons prefix">mail</i>
-              <input name="email" id="icon_prefix" type="email" maxlength="80" autocomplete="off" required>
-              <label for="icon_prefix">E-mail</label>
+              <input name="email" id="email" type="email" maxlength="80" autocomplete="off" required>
+              <label for="email">E-mail</label>
             </div>
 
             <div class="input-field col s10 offset-s1">
               <i class="material-icons prefix">https</i>
-              <input name="senha" id="icon_prefix" type="password" minlength="8" maxlength="32" autocomplete="off"
-                required>
-              <label for="icon_prefix">Senha</label>
+              <input name="senha" id="senha" type="password" minlength="8" maxlength="32" autocomplete="off" required>
+              <label for="senha">Senha</label>
             </div>
 
             <div class="col s12">
@@ -72,7 +71,7 @@
             <br>
 
             <div class="input-field col s10 offset-s1">
-              <button class="btn waves-effect waves-light right purple darken-3" type="submit">
+              <button class="btn waves-effect waves-light right deep-purple accent-3" type="submit">
                 Enviar
                 <i class="material-icons right">send</i>
               </button>
