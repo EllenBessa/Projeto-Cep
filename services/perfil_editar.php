@@ -1,5 +1,6 @@
 <?php
 
+  session_start();
   include_once("./conexao.php");
 
   $dadosEdicaoPerfil = $_POST;
@@ -13,11 +14,12 @@
   } else {
     $comando = "UPDATE usuarios SET nome = '{$dadosEdicaoPerfil['nome']}', avatar = '{$dadosEdicaoPerfil['avatar']}', cidade = '{$dadosEdicaoPerfil['cidade']}', telefone = '{$dadosEdicaoPerfil['telefone']}', turma = '{$dadosEdicaoPerfil['turma']}' WHERE id = '{$dadosEdicaoPerfil['id']}' ";
   }
-
+  
+  $_SESSION["avatar"] = $dadosEdicaoPerfil["avatar"];
+  
   mysqli_query($conn, $comando);
 
-  if(mysqli_affected_rows($conn) != 0){
-    return header("location: ../pages/perfil.php");
-  }
+  return header("location: ../pages/perfil.php");
+
 
 ?>

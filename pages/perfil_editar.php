@@ -17,11 +17,17 @@
 <head>
   <title> Connected Study | Editar Perfil </title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" type="image/png" href="../assets/logo-menu.png" />
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/forms.css" />
   <link rel="stylesheet" href="../css/perfil.css" />
   <link rel="stylesheet" href="../css/principal.css" />
@@ -30,7 +36,7 @@
 
 <body>
 
-  <header id="header"></header>
+  <?php require_once __DIR__ . "/default/header.php" ?>
 
   <form action="../services/perfil_editar.php" method="post">
 
@@ -41,7 +47,7 @@
           <img src="<?= $usuario["avatar"] ?>" alt="imagem de perfil do usuário" class="circle user-img" id="avatar"
             onerror="this.onerror=null;this.src='../assets/avatar.png';" />
           <br>
-          <div class="col s2 offset-s5">
+          <div class="col s10 offset-s1 m8 offset-l2 l2 offset-l5">
 
             <div class="input-field">
               <label for="avatar">URL da imagem</label>
@@ -96,17 +102,8 @@
         ?>
 
           <div class="input-field">
-            <select name="turma">
-              <option value="<?= $usuario["turma"] ?>"> <?= $usuario["turma"] ?> </option>
-              <option value="I3A"> I3A </option>
-              <option value="I3B"> I3B </option>
-              <option value="I2A"> I2A </option>
-              <option value="I2B"> I2B </option>
-              <option value="I1A"> I1A </option>
-              <option value="I1B"> I1B </option>
-              <option value="outros"> Outros </option>
-            </select>
-            <label> Turma </label>
+            <label for="Turma">Turma</label>
+            <input id="Turma" name="Turma" type="text" value="<?= $usuario["turma"] ?>" disabled>
           </div>
 
           <?php
@@ -127,19 +124,8 @@
   </form>
 
   <script src="../js/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="../js/materialize.js"> </script>
-  <script src="../js/global.js"> </script>
-
-  <!-- <script>
-  window.onload = () => {
-    alert("teste")
-    document.getElementById('avatar').onerror = function() {
-      alert('Xi, deu erro!');
-    }
-  }
-  </script> -->
-
 </body>
 
 </html>

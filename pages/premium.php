@@ -4,11 +4,17 @@
 <head>
   <title> Connected Study | Premium </title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" type="image/png" href="../assets/logo-menu.png" />
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/forms.css" />
   <link rel="stylesheet" href="../css/principal.css" />
   <link rel="stylesheet" href="../css/premium.css" />
@@ -54,7 +60,6 @@
   </div>
 
   <script src="../js/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="../js/materialize.js"> </script>
-  <script src="../js/global.js"> </script>
 </body>

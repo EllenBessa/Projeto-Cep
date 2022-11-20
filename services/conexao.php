@@ -1,10 +1,10 @@
 <?php
 
   //Faz a conexao
-  $servidor = "localhost";
-  $usuario = "ellen";
-  $senha = "ellen123";
-  $banco = "cep";
+  $servidor = "sql812.main-hosting.eu";
+  $usuario = "u332567113_connectedstudy";
+  $senha = "Teste123";
+  $banco = "u332567113_connectedstudy";
 
   //criar a conexão
   $conn = mysqli_connect($servidor, $usuario, $senha, $banco);

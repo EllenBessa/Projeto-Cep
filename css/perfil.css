@@ -27,3 +27,15 @@
     margin-top: 0;
   }
 }
+
+@media (max-height: 810px) {
+  .user-inf {
+    margin-top: 100px;
+  }
+}
+
+@media (max-height: 590px) {
+  .user-inf {
+    margin-top: 180px;
+  }
+}

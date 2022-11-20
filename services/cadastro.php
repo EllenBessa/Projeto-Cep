@@ -8,6 +8,10 @@
 
   if($dadosCadastrais["nivel_acesso"] != "Aluno"){
     $dadosCadastrais["turma"] = NULL;
+
+    if($dadosCadastrais["senha_professor"] != "Seemg@123"){
+      return header("location: ../pages/cadastro.php");
+    } 
   }
   
   $comando = "INSERT INTO usuarios (`nome_usuario`, `nome`, `email`, `senha`, `turma`, `cidade`, `telefone`, `nivel_acesso`) VALUES ('{$dadosCadastrais["nome_usuario"]}', '{$dadosCadastrais["nome"]}', '{$dadosCadastrais["email"]}', md5('{$dadosCadastrais["senha"]}'), '{$dadosCadastrais["turma"]}', '{$dadosCadastrais["cidade"]}', '{$dadosCadastrais["telefone"]}', '{$dadosCadastrais["nivel_acesso"]}')"; 

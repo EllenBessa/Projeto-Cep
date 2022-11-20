@@ -1,9 +1,148 @@
-.borda {
-  border: 1px solid black;
-  border-radius: 10px;
+.caixa-artigo {
   margin: 25px;
+  height: 500px;
+  overflow: auto;
+  margin-bottom: 40px;
 }
 
-.titulo {
-  font-size: 32px;
+.caixa-artigo::-webkit-scrollbar {
+  width: 10px;
+}
+
+.caixa-artigo::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.caixa-artigo::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.caixa-artigo::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+span {
+  display: block;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  justify-content: center;
+
+  width: auto;
+  padding: 4px 10px;
+  margin-bottom: 8px;
+
+  font-size: 12px;
+  font-weight: 500;
+  color: #333333;
+  background-color: rgb(204, 204, 204);
+  border-radius: 200px;
+}
+
+.descricao {
+  line-height: 160%;
+  margin-top: 48px;
+
+  color: #191919;
+}
+
+.conteudo {
+  margin-top: 24px;
+  line-height: 160%;
+
+  color: #333333;
+}
+
+.comentarios {
+  margin-top: 40px;
+}
+
+.adicionar-comentario {
+  margin-top: 12px;
+  margin-bottom: 24px;
+  gap: 24px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.comentario {
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background: #f2f2f2;
+
+  padding: 12px 18px !important;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.imagem-comentario {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border: 1px solid #c6c6ce;
+}
+
+.comentario-nome {
+  all: unset;
+  font-weight: 500;
+}
+
+.comentario-conteudo {
+  margin: 0;
+}
+
+.modal-exclusao {
+  padding: 24px 24px;
+
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+  z-index: 1;
+  position: fixed;
+  top: 40%;
+}
+
+.modal-exclusao strong {
+  font-size: 20px;
+}
+
+.modal-exclusao p {
+  font-size: 18px;
+}
+
+.modal-exclusao footer {
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.modal-exclusao footer a {
+  padding: 4px 8px;
+
+  color: #121214;
+  border-radius: 4px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-exclusao footer a:hover {
+  background: #c6c6ce;
 }

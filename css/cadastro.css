@@ -10,7 +10,7 @@
   transform: translate(-50%, -50%);
   background: #e9e9e9;
   padding: 35px;
-  border-radius: 25px;
+  border-radius: 8px;
   width: 45%;
 }
 
@@ -46,6 +46,15 @@
   .center {
     width: 100%;
   }
+
+  .center h3 {
+    display: none;
+  }
+
+  .center form {
+    margin: 50px 0;
+  }
+
   .container {
     width: 100%;
   }

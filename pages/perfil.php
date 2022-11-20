@@ -1,13 +1,13 @@
 <?php
-  
-  include_once("../services/conexao.php");
-  include_once("../services/verifica_login.php");
 
-  $comando = "SELECT * FROM usuarios WHERE `id` = '{$_SESSION["id"]}'"; 
+include_once("../services/conexao.php");
+include_once("../services/verifica_login.php");
 
-  $result = mysqli_query($conn, $comando); 
+$comando = "SELECT * FROM usuarios WHERE `id` = '{$_SESSION["id"]}'";
 
-  $usuario = mysqli_fetch_assoc($result);
+$result = mysqli_query($conn, $comando);
+
+$usuario = mysqli_fetch_assoc($result);
 
 ?>
 
@@ -18,11 +18,17 @@
 <head>
   <title> Connected Study | Perfil </title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="icon" type="image/png" href="../assets/logo-menu.png" />
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/forms.css" />
   <link rel="stylesheet" href="../css/perfil.css" />
   <link rel="stylesheet" href="../css/principal.css" />
@@ -31,7 +37,7 @@
 
 <body>
 
-  <header id="header"></header>
+  <?php require_once __DIR__ . "/default/header.php" ?>
 
   <div class="user-inf">
     <div class="row">
@@ -71,7 +77,7 @@
         </div>
 
         <?php
-          if($usuario["nivel_acesso"] != "Aluno") {
+        if ($usuario["nivel_acesso"] != "Aluno") {
         ?>
 
         <div class="input-field">
@@ -80,18 +86,16 @@
         </div>
 
         <?php
-          } else {
+        } else {
         ?>
 
         <div class="input-field">
-          <select name="turma" disabled>
-            <option value="<?= $usuario["turma"] ?>"> <?= $usuario["turma"] ?> </option>
-          </select>
-          <label> Turma </label>
+          <label for="Turma">Turma</label>
+          <input id="Turma" name="Turma" type="text" value="<?= $usuario["turma"] ?>" disabled>
         </div>
 
         <?php
-          }
+        }
         ?>
 
         <div class="input-field">
@@ -105,9 +109,9 @@
   </div>
 
   <script src="../js/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="../js/materialize.js"> </script>
-  <script src="../js/global.js"> </script>
+
 
 </body>
 

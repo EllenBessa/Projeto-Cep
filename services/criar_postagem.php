@@ -7,14 +7,16 @@
 
   $dataPublicacao = $dados["publico"] == "sim" ? "now()" : NULL;
 
+  $publico = $dados["publico"] == "sim" ? 1 : 0;
+
   if ($dados["publico"] == "sim") {
-    $comando = "INSERT INTO artigos (`titulo`, `autor`, `descricao`, `conteudo`, `categoria`, `data_publicacao`, `publico`) VALUES ('{$dados['titulo']}', '{$_SESSION["nome_usuario"]}', '{$dados['descricao']}', '{$dados['conteudo']}', '{$dados['categoria']}', {$dataPublicacao}, 1)";
+    $comando = "INSERT INTO artigos (`titulo`, `autor`, `descricao`, `conteudo`, `categoria`, `data_publicacao`, `publico`) VALUES ('{$dados['titulo']}', '{$_SESSION["nome_usuario"]}', '{$dados['descricao']}', '{$dados['conteudo']}', '{$dados['categoria']}', {$dataPublicacao}, $publico)";
   } else {
-    $comando = "INSERT INTO artigos (`titulo`, `autor`, `descricao`, `conteudo`, `categoria`) VALUES ('{$dados['titulo']}', '{$_SESSION["nome_usuario"]}', '{$dados['descricao']}', '{$dados['conteudo']}', '{$dados['categoria']}')";
+    $comando = "INSERT INTO artigos (`titulo`, `autor`, `descricao`, `conteudo`, `categoria`, `publico`) VALUES ('{$dados['titulo']}', '{$_SESSION["nome_usuario"]}', '{$dados['descricao']}', '{$dados['conteudo']}', '{$dados['categoria']}', $publico)";
   }
 
   mysqli_query($conn, $comando);
 
-  return header("location: ../pages/artigos.php");
+  return header("location: ../pages/meus_artigos.php");
 
 ?>

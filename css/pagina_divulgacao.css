@@ -1,0 +1,135 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #651fff;
+  height: 100vh;
+}
+
+nav {
+  background: #651fff;
+  height: 80px;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav strong {
+  font-size: 25px;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container-body {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 100px 32px 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.posicao-botao {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+img {
+  width: 60%;
+  height: 55%;
+}
+
+.posicao-letra {
+  width: 40%;
+}
+
+.botao {
+  width: 140px;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+
+.botao:hover {
+  filter: brightness(0.75);
+}
+
+h1 {
+  color: #fff;
+  font-size: 50px;
+}
+
+h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+strong {
+  color: #fff;
+  font-size: 18px;
+}
+
+p {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@media (max-width: 1140px) {
+  .posicao-letra {
+    width: 60%;
+  }
+
+  img {
+    width: 50%;
+    height: 55%;
+  }
+}
+
+@media (max-width: 950px) {
+  .container-body {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .posicao-letra {
+    width: 60%;
+    text-align: center;
+  }
+
+  img {
+    width: 60%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 650px) {
+  .posicao-letra {
+    width: 100%;
+    padding: 0 32px;
+  }
+
+  img {
+    width: 80%;
+    height: 300px;
+  }
+}
