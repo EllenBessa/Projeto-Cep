@@ -123,7 +123,8 @@
 
             <div class="input-field col s12 offset-s0 m6">
               <i class="material-icons prefix black-text">https</i>
-              <input type="password" name="senha" maxlength="32" autocomplete="off" placeholder="Senha" required>
+              <input type="password" name="senha" minlength="8" maxlength="32" autocomplete="off" placeholder="Senha"
+                required>
             </div>
 
             <div class="input-field col s11 offset-s1 m6 offset-m0">

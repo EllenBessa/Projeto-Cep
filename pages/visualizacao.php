@@ -15,7 +15,6 @@ $data = strtotime($artigo["data_publicacao"]);
 
 $data = date('m/d/Y', $data);
 
-
 // Busca os comentários
 $consultaComentarios = "SELECT comentarios.*, usuarios.nome_usuario, usuarios.avatar FROM comentarios JOIN usuarios ON comentarios.id_usuario = usuarios.id WHERE comentarios.id_artigo = {$id} ORDER BY id desc";
 
@@ -77,15 +76,18 @@ $resultComentarios = mysqli_query($conn, $consultaComentarios);
         <?php
         if ($artigo["autor"] == $_SESSION["nome_usuario"] || $_SESSION["nivel_acesso"] == "Professor") {
         ?>
-          <div class="col s12">
-            <a href="./editar_postagem.php?id=<?= $artigo['id'] ?>" class="btn waves-effect waves-light right deep-purple accent-3" type="submit" name="action" style="margin: 0 12px;">
-              <i class="material-icons">edit</i>
-            </a>
+        <div class="col s12">
+          <a href="./editar_postagem.php?id=<?= $artigo['id'] ?>"
+            class="btn waves-effect waves-light right deep-purple accent-3" type="submit" name="action"
+            style="margin: 0 12px;">
+            <i class="material-icons">edit</i>
+          </a>
 
-            <buttton id="abrir-modal" class="btn waves-effect waves-light right deep-purple accent-3 modal-trigger" type="submit" name="action">
-              <i class="material-icons">delete</i>
-            </buttton>
-          </div>
+          <buttton id="abrir-modal" class="btn waves-effect waves-light right deep-purple accent-3 modal-trigger"
+            type="submit" name="action">
+            <i class="material-icons">delete</i>
+          </buttton>
+        </div>
         <?php
         }
         ?>
@@ -93,9 +95,12 @@ $resultComentarios = mysqli_query($conn, $consultaComentarios);
         <section class="col s12 comentarios">
           <h5> Comentários </h5>
 
-          <form action="../services/adicionar_comentario.php?idArtigo=<?= $artigo["id"] ?>" method="post" class="col s12 adicionar-comentario">
-            <textarea type="text" name="comentario" placeholder="Deixe seu comentário..." class="materialize-textarea" maxlength="300" required></textarea>
-            <button class="btn waves-effect waves-light deep-purple accent-3" type="submit" name="action"><i class="material-icons">send</i>
+          <form action="../services/adicionar_comentario.php?idArtigo=<?= $artigo["id"] ?>" method="post"
+            class="col s12 adicionar-comentario">
+            <textarea type="text" name="comentario" placeholder="Deixe seu comentário..." class="materialize-textarea"
+              maxlength="300" required></textarea>
+            <button class="btn waves-effect waves-light deep-purple accent-3" type="submit" name="action"><i
+                class="material-icons">send</i>
             </button>
           </form>
 
@@ -103,14 +108,39 @@ $resultComentarios = mysqli_query($conn, $consultaComentarios);
           while ($comentarios = mysqli_fetch_assoc($resultComentarios)) {
           ?>
 
-            <div class="col s12 comentario">
-              <img src=<?= $comentarios["avatar"] ?> alt="imagem de perfil do usuário" class="circle imagem-comentario" onerror="this.onerror=null;this.src='../assets/avatar.png';" />
+          <div class="col s12 comentario">
+            <img src=<?= $comentarios["avatar"] ?> alt="imagem de perfil do usuário" class="circle imagem-comentario"
+              onerror="this.onerror=null;this.src='../assets/avatar.png';" />
 
-              <div>
-                <strong class="comentario-nome"><?= $comentarios["nome_usuario"] ?></strong>
-                <p class="comentario-conteudo"><?= $comentarios["conteudo"] ?></p>
-              </div>
+            <div>
+              <strong class="comentario-nome"><?= $comentarios["nome_usuario"] ?></strong>
+              <p class="comentario-conteudo"><?= $comentarios["conteudo"] ?></p>
             </div>
+
+            <?php
+              if ($artigo["autor"] == $_SESSION["nome_usuario"] || $_SESSION["nivel_acesso"] == "Professor") {
+            ?>
+
+            <buttton id="abrir-modal-comentario" class="waves-effect waves-light right modal-trigger"
+              style="position: absolute; right: 6px;">
+              <i class="material-icons">delete</i>
+            </buttton>
+
+            <?php
+              }
+            ?>
+          </div>
+
+          <!-- Modal comentario -->
+          <dialog id="modal-excluir-comentario" class="modal-exclusao">
+            <strong>Deseja excluir esse comentario?</strong>
+            <p>Após excluido os dados desse comentario não poderão ser recuperados.</p>
+
+            <footer>
+              <a id="fechar-modal-comentario">Cancelar</a>
+              <a href="../services/deletar_comentario.php?id=<?= $comentarios["id"] ?>&id_artigo=<?=$id?>">Excluir</a>
+            </footer>
+          </dialog>
 
           <?php
           }
@@ -131,6 +161,7 @@ $resultComentarios = mysqli_query($conn, $consultaComentarios);
         <a href="../services/deletar.php?id=<?= $artigo['id'] ?>">Excluir</a>
       </footer>
     </dialog>
+
   </main>
 
   <script src="../js/jquery.js"></script>
@@ -138,13 +169,21 @@ $resultComentarios = mysqli_query($conn, $consultaComentarios);
   <script src="../js/materialize.js"> </script>
 
   <script>
-    $("#abrir-modal").click(() => {
-      $("#modal-excluir").attr("open", true)
-    })
+  $("#abrir-modal").click(() => {
+    $("#modal-excluir").attr("open", true)
+  })
 
-    $("#fechar-modal").click(() => {
-      $("#modal-excluir").removeAttr("open")
-    })
+  $("#fechar-modal").click(() => {
+    $("#modal-excluir").removeAttr("open")
+  })
+
+  $("#abrir-modal-comentario").click(() => {
+    $("#modal-excluir-comentario").attr("open", true)
+  })
+
+  $("#fechar-modal-comentario").click(() => {
+    $("#modal-excluir-comentario").removeAttr("open")
+  })
   </script>
 
 

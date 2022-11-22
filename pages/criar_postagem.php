@@ -39,7 +39,8 @@ include_once("../services/verifica_login.php");
             </div>
 
             <div class="input-field textarea">
-              <textarea id="descricao" name="descricao" class="materialize-textarea" maxlength="250" required></textarea>
+              <textarea id="descricao" name="descricao" class="materialize-textarea" maxlength="250"
+                required></textarea>
               <label for="descricao">Descrição</label>
             </div>
 
@@ -50,7 +51,7 @@ include_once("../services/verifica_login.php");
 
             <div class="input-field textarea">
               <textarea id="categoria" class="materialize-textarea" name="categoria" required></textarea>
-              <label for="categoria">categoria</label>
+              <label for="categoria">Categoria</label>
             </div>
 
             <div class="input-field">
@@ -98,24 +99,24 @@ include_once("../services/verifica_login.php");
 
 
   <script>
-    $("#titulo").change((e) => {
-      $("#titulo-preview").text(e.target.value)
-    })
+  $("#titulo").change((e) => {
+    $("#titulo-preview").text(e.target.value)
+  })
 
-    $("#descricao").change((e) => {
-      $("#descricao-preview").text(e.target.value)
-    })
+  $("#descricao").change((e) => {
+    $("#descricao-preview").text(e.target.value)
+  })
 
-    $("#conteudo").change((e) => {
-      $("#conteudo-preview").text(e.target.value)
-    })
+  $("#conteudo").change((e) => {
+    $("#conteudo-preview").text(e.target.value)
+  })
 
-    $("#categoria").change((e) => {
-      const categoria = $('#categoria').val()
+  $("#categoria").change((e) => {
+    const categoria = $('#categoria').val()
 
-      $("#categorias-preview").html(`<div class="chip"> ${categoria} </div>`)
+    $("#categorias-preview").html(`<div class="chip"> ${categoria} </div>`)
 
-    })
+  })
   </script>
 </body>
 
